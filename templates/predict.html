@@ -43,12 +43,12 @@
 	<table align="center" style="border-radius: 50px; background-color: white; padding: 20px; width="400">
 	<tr><td class="portfolio-caption-heading" align="center">
 	<img src="/static/uploads/{{ filename }}" height="250" width="250" align="center"></td></tr>
-	<tr><td class="section-heading text-uppercase" align="center"><b>{{ predictions.class1 }}</b></td>
+	<tr><td class="section-heading text-uppercase" align="center" font-size="10rem"><b>{{ predictions.class1 }}</b></td>
 	</tr>
 	<tr><td>&nbsp;&nbsp;</td></tr>
         <tr><td class="portfolio-caption-subheading text-muted"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }}% confidence.</td></tr>
 	<tr><td>&nbsp;&nbsp;</td></tr>
-        <tr><td colspan="2" align="center"><a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a></td></tr>
+        <tr><td colspan="2" align="center"><a href="{{ url_for('main_page') + '#portfolio' }}"><button class="button mt-3">Try again?</button></a></td></tr>
 	<tr><td>&nbsp;&nbsp;</td></tr>
 	</table>
 	</div>
