@@ -33,7 +33,7 @@ def main_page():
 @app.route('/prediction/<filename>') 
 def prediction(filename):
     #Step 1
-    my_image = plt.imread(os.path.join('uploads', filename))
+    my_image = plt.imread(os.path.join('static/uploads', filename))
     #Step 2
     my_image_re = resize(my_image, (32,32,3))
     
