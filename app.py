@@ -56,7 +56,7 @@ def prediction(filename):
       "prob3":probabilities[index[0]],
      }
     #Step 5
-    return render_template('predict.html', predictions=predictions)
+    return render_template('predict.html', predictions=predictions, filename=filename)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8080)
