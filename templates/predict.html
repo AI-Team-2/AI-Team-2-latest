@@ -35,11 +35,28 @@
                 </div>
             </div>
         </nav>
-<div id="maintext" style="position:absolute; margin:auto; width:700px; height:100px; text-align:center; top:0; bottom: 0; left: 0; right: 0;background-color:black">
-  <p><img src="uploads/{{ filename }}"> {{ predictions.class1 }}</p>
-  <p class="text-light"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }} confidence.</p>
-  <a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a>
-</div>
+	<table align="center">
+	<tr><td class="portfolio-caption-heading"><img src="static/uploads/{{ filename }}"> {{ predictions.class1 }}</td></tr>
+        <tr><td class="portfolio-caption-subheading text-muted"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }} confidence.</td></tr>
+        <tr><td><a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a></td></tr>
+	</table>
+<!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Makan Ventures 2022</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                        <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
 <script>
   window.watsonAssistantChatOptions = {

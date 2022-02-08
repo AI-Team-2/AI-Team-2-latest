@@ -26,7 +26,7 @@ def main_page():
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
-        file.save(os.path.join('uploads', filename))
+        file.save(os.path.join('static/uploads', filename))
         return redirect(url_for('prediction', filename=filename))
     return render_template('index.html')
 
