@@ -11767,45 +11767,10 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.myclass + label {
-    font-size: 2em;
-    font-weight: 700;
-    color: white;
-    background-color: green;
-    border-radius: 10px;
-    display: inline-block;
+input[type="file"] { 
+  opacity: 0; /* make transparent */
+  z-index: -1; /* move under anything else */
+  position: absolute; /* don't let it take up space */
 }
 
-.myclass:focus + label,
-.myclass + label:hover {
-    background-color: purple;
-}
 
-.drop-zone__input {
-    display: none;
-}
-
-.drop-zone--over {
-    border-style: solid;
-}
-
-.drop-zone {
-/*  position: relative;*/
-    max-width: 100%;
-    width: 70%;
-    height: 80%;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: "Quicksand", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    cursor: pointer;
-    color: #cccccc;
-    border: 4px dashed #fbfbfb;
-    border-radius: 10px;
-    background-color: wheat;
-    margin: 0 auto;
-}
