@@ -36,12 +36,14 @@
             </div>
         </nav>
 	<header class="masthead">
-	<table align="center" style="border-radius: 100px 100px 100px 100px; background-color: white; padding: 20px;>
+	<table align="center" style="border-radius: 50px 50px 50px 50px; background-color: white; padding: 20px; width="350">
 	<tr><td class="portfolio-caption-heading">
-	<img src="/static/uploads/{{ filename }}" height="42" width="42"></td></tr>
-	<tr><td class="portfolio-caption-heading" align="center">{{ predictions.class1 }}</td>
+	<img src="/static/uploads/{{ filename }}" height="200" width="200"></td></tr>
+	<tr><td class="portfolio-caption-heading" align="center"><b>{{ predictions.class1 }}</b></td>
 	</tr>
+	<tr><td>&nbsp;&nbsp;</td></tr>
         <tr><td class="portfolio-caption-subheading text-muted" colspan="2"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }}% confidence.</td></tr>
+	<tr><td>&nbsp;&nbsp;</td></tr>
         <tr><td colspan="2" align="center"><a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a></td></tr>
 	</table>
 	</header>
