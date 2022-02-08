@@ -35,11 +35,16 @@
                 </div>
             </div>
         </nav>
-	<table align="center">
-	<tr><td class="portfolio-caption-heading" align="center"><img src="/static/uploads/{{ filename }}"> {{ predictions.class1 }}</td></tr>
-        <tr><td class="portfolio-caption-subheading text-muted"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }} confidence.</td></tr>
-        <tr><td><a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a></td></tr>
+	<header class="masthead">
+	<table align="center" style="border-radius: 20px 20px 20px 20px; background-color: white; padding: 20px;>
+	<tr><td class="portfolio-caption-heading" style="padding: 5px; border-radius: 4px; border: 1px solid #ddd; object-fit: cover;">
+	<img src="/static/uploads/{{ filename }}"></td>
+	<td class="portfolio-caption-heading">{{ predictions.class1 }}</td>
+	</tr>
+        <tr><td class="portfolio-caption-subheading text-muted" colspan="2"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }} confidence.</td></tr>
+        <tr><td colspan="2" align="center"><a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a></td></tr>
 	</table>
+	</header>
 <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
