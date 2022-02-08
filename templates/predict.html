@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
      
-        <link href="static/css/styles.css" rel="stylesheet" />
+        <link href="../static/css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -35,8 +35,8 @@
                 </div>
             </div>
         </nav>
-<div id="maintext" style="position:absolute; margin:auto; width:700px; height:300px; text-align:center; top:0; bottom: 0; left: 0; right: 0;background-color:black">
-  <p><img src="uploads/{{ filename }}">
+<div id="maintext" style="position:absolute; margin:auto; width:700px; height:100px; text-align:center; top:0; bottom: 0; left: 0; right: 0;background-color:black">
+  <p><img src="uploads/{{ filename }}"> {{ predictions.class1 }}</p>
   <p class="text-light"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }} confidence.</p>
   <a href="{{ url_for('main_page') }}"><button class="button mt-3">Try again?</button></a>
 </div>
