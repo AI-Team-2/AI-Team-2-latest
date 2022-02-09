@@ -13,49 +13,44 @@ import numpy as np
 
 print("Loading model")
 os.environ["CUDA_VISIBLE_DEVICES"]="-1"
-#global sess
-#sess = tf.compat.v1.Session()
-#set_session(sess)
-global model 
-model = load_model('LocalFoodRGBWorking.h5') 
-#global graph
-#graph = tf.compat.v1.get_default_graph()
 
+# Load the model 
+global model 
+model = load_model('LocalFoodRGBWorking.h5')
+
+# This is the default main page
 @app.route('/', methods=['GET', 'POST']) 
 def main_page():
     if request.method == 'POST':
         file = request.files['file']
         filename = secure_filename(file.filename)
+        # Save the uploaded image file for prediction
         file.save(os.path.join('static/uploads', filename))
         return redirect(url_for('prediction', filename=filename))
     return render_template('index.html')
 
 @app.route('/prediction/<filename>') 
 def prediction(filename):
-    #Step 1
+    #Step 1 - Read the uploaded image file for prediction
     my_image = plt.imread(os.path.join('static/uploads', filename))
-    #Step 2
+    #Step 2 - Resize the image to 32 X 32
     my_image_re = resize(my_image, (32,32,3))
     
-    #Step 3
-    #with graph.as_default():
-      #set_session(sess)
-      #Add
+    #Step 3 - Predict the uploaded image file
     model.run_eagerly=True  
     probabilities = model.predict(np.array( [my_image_re,] ))[0,:]
     print(probabilities)
-    #Step 4
+    #Step 4 - Define the categories of classes that we have 
     number_to_class = ['Chicken Rice', 'Hokkien Prawn Noodles', 'Ice Kacang']
+    # Sort the probabilities of the prediction
     index = np.argsort(probabilities)
+    # Convert the prediction to % and round off to 2 decmial places for display
     predictions = {
       "class1":number_to_class[index[2]],
-      "class2":number_to_class[index[1]],
-      "class3":number_to_class[index[0]],
       "prob1":round(probabilities[index[2]]*100,2),
-      "prob2":probabilities[index[1]],
-      "prob3":probabilities[index[0]],
-     }
-    #Step 5
+    }
+    #Step 5 - return the prediction and the file name of the image as we need to display the
+    #uploaded image
     return render_template('predict.html', predictions=predictions, filename=filename)
 
 if __name__ == "__main__":
