@@ -96,13 +96,14 @@ ethnic style. </p>
                         <div class="portfolio-item">
 			    <a class="portfolio-link" data-bs-toggle="modal" href="#!">
 			    <form method="post" enctype="multipart/form-data">
-				<label>
-                                <div class="portfolio-hover">
-			           <div class="portfolio-hover-content"><input type="file" name="file" style="display:none" required="required" accept="image/*" onchange='if (this.value != 0) { this.form.submit(); this.form.reset(); }'></div>
-                                </div>
-                                <img class="img-fluid" src="../static/assets/img/portfolio/upload3.jpg" />
-				</label>
-			    </form>
+				<div class="portfolio-hover">
+			           <div class="portfolio-hover-content">
+				   <label>
+				   <img class="img-fluid" src="../static/assets/img/portfolio/upload3.jpg" />
+				   <input type="file" name="file" style="display:none" required="required" accept="image/*" onchange='if (this.value != 0) { this.form.submit(); this.form.reset(); }'></div>
+                                   </label>
+				</div>
+           		    </form>
                             </a>
                             <div class="portfolio-caption">
                                 <div class="portfolio-caption-heading">Upload photo</div>
