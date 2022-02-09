@@ -38,12 +38,12 @@
 	<header class="masthead">
 	<div class="container">
 	<div class="text-center">
-             <h2 class="section-heading text-uppercase">Image Classification</h2>
+             <h2 class="masthead-heading text-uppercase">Image Classification</h2>
         </div>
 	<table align="center" style="border-radius: 50px; background-color: white; padding: 20px; width="400">
 	<tr><td class="portfolio-caption-heading" align="center">
 	<img src="/static/uploads/{{ filename }}" height="250" width="250" align="center"></td></tr>
-	<tr><td class="section-heading text-uppercase" align="center" font-size="10rem"><b>{{ predictions.class1 }}</b></td>
+	<tr><td class="section-heading text-uppercase" align="center" font-size="10rem"><h2><b>{{ predictions.class1 }}</b></h2></td>
 	</tr>
 	<tr><td>&nbsp;&nbsp;</td></tr>
         <tr><td class="portfolio-caption-subheading text-muted"> We predict the food to be {{ predictions.class1 }} with  {{ predictions.prob1 }}% confidence.</td></tr>
