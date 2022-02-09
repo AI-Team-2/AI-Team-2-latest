@@ -26,11 +26,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Local delights</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">IClassification</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main_page') + '#services'}}">Local delights</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main_page') + '#portfolio'}}">IClassification</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main_page') + '#about'}}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main_page') + '#team'}}">Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('main_page') + '#contact'}}">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +38,7 @@
 	<header class="masthead">
 	<div class="container">
 	<div class="text-center">
-             <h2 class="masthead-heading text-uppercase">Image Classification</h2>
+             <h2 class="section-heading text-uppercase">Image Classification</h2>
         </div>
 	<table align="center" style="border-radius: 50px; background-color: white; padding: 20px; width="400">
 	<tr><td class="portfolio-caption-heading" align="center">
